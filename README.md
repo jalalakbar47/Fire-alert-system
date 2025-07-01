@@ -28,6 +28,14 @@ This project enables quick fire or smoke detection using two sensors (MQ-2 and f
 
 ---
 
+🎯 Features
+- Real-time fire/smoke detection
+- SMS alerts using cloud API (no GSM module needed)
+- Wi-Fi enabled (Arduino UNO R4 Wi-Fi)
+- Easy integration and deployment
+  
+---
+
 ## ⚙️ How It Works
 
 1. **Wi-Fi Connection**  
