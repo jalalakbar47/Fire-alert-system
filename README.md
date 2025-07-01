@@ -3,24 +3,21 @@ Fire & Smoke Alarm System with SMS Notification (Arduino UNO R4)
 
 A DIY project to detect fire and smoke, trigger an alarm, and instantly send SMS alerts via Wi‑Fi & cloud API (no GSM module required).
 
-📋 Table of Contents
-
-1. Overview
-2. How It Works
-3. Components Required
-4. Wiring Diagram
-5. Software & SMS Integration
-6. Arduino Code
-7. Usage
-8. License
+## Table of Contents
+- [Overview](#overview)
+- [How It Works](#how-it-works)
+- [Components Required](#components-required)
+- [Wiring Diagram](#wiring-diagram)
+- [Software & SMS Integration](#software--sms-integration)
+- [Usage](#usage)
+- [License](#license)
 
 
 ---
 
 Overview
 
-This project enables quick detection of fire or smoke using two sensors connected to an Arduino UNO R4 Wi‑Fi board. It triggers a buzzer and LEDs locally and sends real-time SMS alerts to a designated number using a cloud SMS API—no GSM hardware needed. It's an affordable and effective safety upgrade for homes or offices .
-
+This project enables quick detection of fire or smoke using two sensors connected to an Arduino UNO R4 Wi-Fi board. It triggers a buzzer and LEDs locally and sends real-time SMS alerts to a designated number using a cloud SMS API—without the need for GSM hardware. It’s an affordable and effective safety upgrade for homes or offices.
 
 ---
 
@@ -73,39 +70,20 @@ Software & SMS Integration
  .Select SMS template (e.g., Device Status Alert ID = 101).
  .Assign template variables (var1, var2) in your code—for instance, var1 = “House”, var2 = “FIRE EMERGENCY!” .
 
-
-
 3. HTTP Request:
   Arduino sends alert as JSON via POST (or GET) with API key, recipient number, and message variables.
-
----
-
-Arduino Code
-
-Outline of main routines ⬇️:
-
-
 
 ---
 
 Usage
 
 1. Upload the code to your Arduino via the Arduino IDE.
-
-
 2. Power the system from USB or wall adapter.
-
-
 3. Green LED indicates normal operation.
-
-
 4. Smoke or flame triggers red LED, buzzer, and SMS to your phone.
-
-
 5. Monitor sensor values via Serial or optional LED matrix display.
 
-
-6. Customize:
+##6. Customize:
 
 Adjust SMOKE_THRESHOLD based on your environment.
 
@@ -115,7 +93,5 @@ Swap SMS template if preferred.
 
 ---
 
-License
-
-This project is shared for educational and hobbyist use. Please attribute Circuit Digest when using or adapting.
-
+## License
+This project is shared for educational and hobbyist use only. Please attribute Circuit Digest when using or adapting. No commercial use allowed without permission.
