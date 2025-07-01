@@ -1,97 +1,107 @@
+# 🔥 Fire & Smoke Alarm System with SMS Notification (Wi-Fi | Arduino UNO R4)
 
-Fire & Smoke Alarm System with SMS Notification (Arduino UNO R4)
+A smart DIY system to detect fire and smoke using gas/flame sensors, trigger an alarm, and send instant SMS alerts to your phone using Wi-Fi and a cloud API — **no GSM module required**.
 
-A DIY project to detect fire and smoke, trigger an alarm, and instantly send SMS alerts via Wi‑Fi & cloud API (no GSM module required).
-
-## Table of Contents
-- [Overview](#overview)
-- [How It Works](#how-it-works)
-- [Components Required](#components-required)
-- [Wiring Diagram](#wiring-diagram)
-- [Software & SMS Integration](#software--sms-integration)
-- [Usage](#usage)
-- [License](#license)
-
+> 📡 Built using **Arduino UNO R4 Wi-Fi**, **MQ-2 gas sensor**, **Flame sensor**, and the **Circuit Digest SMS API**.
 
 ---
 
-Overview
+## 📚 Table of Contents
 
-This project enables quick detection of fire or smoke using two sensors connected to an Arduino UNO R4 Wi-Fi board. It triggers a buzzer and LEDs locally and sends real-time SMS alerts to a designated number using a cloud SMS API—without the need for GSM hardware. It’s an affordable and effective safety upgrade for homes or offices.
-
----
-
-How It Works
-
-1. Wi‑Fi Connection: Arduino connects to a local Wi‑Fi network using stored credentials.
-2. Detection:
- . MQ‑2 sensor measures smoke or combustible gas levels.
- . Flame sensor detects infrared light from fire.
-3. Alert Trigger:
- .If smoke or flame exceeds the threshold, Arduino activates a buzzer and red LED, turns off green LED.
- .It sends an HTTP request to the SMS API with your phone number and alert message.
-4. SMS Delivery: The cloud SMS API processes and sends the alert to your mobile network — fast, reliable, and free .
----
-
-Components Required
-
-1.Arduino UNO R4 Wi‑Fi
-2. MQ‑2 Smoke Sensor (gas/smoke detection)
-3. Flame Sensor (infrared fire detection)
-4. 5 V Active Buzzer
-5. Red & Green LEDs + 220 Ω resistors
-6. Breadboard & jumper wires
-7. USB or 5 V DC power supply
-8. Wi‑Fi network & Circuit Digest SMS API Key 
+- [📌 Overview](#-overview)
+- [⚙️ How It Works](#-how-it-works)
+- [🔩 Components Required](#-components-required)
+- [🧠 Software & SMS Integration](#-software--sms-integration)
+- [🔌 Wiring Diagram](#-wiring-diagram)
+- [▶️ Usage](#-usage)
+- [📄 License](#-license)
 
 ---
 
-Wiring Diagram
+## 📌 Overview
 
-Component	Connected to
+This project enables quick fire or smoke detection using two sensors (MQ-2 and flame) connected to an **Arduino UNO R4 Wi-Fi** board.
 
-1. MQ‑2 analog out	A0 of Arduino
-2. Flame digital out	D6
-3. Buzzer	D4
-4. Green LED	D3 (via 220 Ω)
-5. Red LED	D5 (via 220 Ω)
-6. Arduino is powered via USB or DC jack. Breadboard supports component arrangement .
+- 🧯 Triggers a **buzzer** and **LEDs** locally.
+- 📤 Sends real-time **SMS alerts** using a **cloud SMS API** — without GSM hardware.
+- 🏠 A smart, affordable, and effective safety upgrade for homes and offices.
 
 ---
 
-Software & SMS Integration
+## ⚙️ How It Works
 
-1. Libraries:
- .WiFiS3.h for Wi‑Fi networking
- .Arduino_LED_Matrix.h for onboard LED animations (optional for enhanced UX) 
+1. **Wi-Fi Connection**  
+   Arduino connects to a local Wi-Fi network using stored credentials.
 
-2. SMS API:
- .Use Circuit Digest Cloud SMS API.
- .Select SMS template (e.g., Device Status Alert ID = 101).
- .Assign template variables (var1, var2) in your code—for instance, var1 = “House”, var2 = “FIRE EMERGENCY!” .
+2. **Detection**  
+   - `MQ-2` detects smoke or gas.
+   - `Flame sensor` detects infrared light from fire.
 
-3. HTTP Request:
-  Arduino sends alert as JSON via POST (or GET) with API key, recipient number, and message variables.
+3. **Alert Trigger**  
+   - If sensor readings exceed the threshold:
+     - 🔴 Red LED turns ON
+     - 🟢 Green LED turns OFF
+     - 🔊 Buzzer activates
+     - 🔗 Arduino sends HTTP request to the SMS API
 
----
-
-Usage
-
-1. Upload the code to your Arduino via the Arduino IDE.
-2. Power the system from USB or wall adapter.
-3. Green LED indicates normal operation.
-4. Smoke or flame triggers red LED, buzzer, and SMS to your phone.
-5. Monitor sensor values via Serial or optional LED matrix display.
-
-##6. Customize:
-
-Adjust SMOKE_THRESHOLD based on your environment.
-
-Change message content via var1 and var2.
-
-Swap SMS template if preferred.
+4. **SMS Delivery**  
+   - API sends alert to your phone (e.g. "FIRE EMERGENCY at House")  
+   - 📨 Free and fast message delivery via Circuit Digest API
 
 ---
 
-## License
-This project is shared for educational and hobbyist use only. Please attribute Circuit Digest when using or adapting. No commercial use allowed without permission.
+## 🔩 Components Required
+
+| Qty | Component                          |
+|-----|------------------------------------|
+| 1   | Arduino UNO R4 Wi-Fi               |
+| 1   | MQ-2 Smoke/Gas Sensor              |
+| 1   | Flame Sensor (Infrared)            |
+| 2   | LEDs (Red & Green)                 |
+| 2   | 220 Ω Resistors                    |
+| 1   | 5V Active Buzzer                   |
+| 1   | Breadboard & Jumper Wires          |
+| 1   | USB or 5V DC Power Supply          |
+| -   | Wi-Fi Network                      |
+| -   | Circuit Digest SMS API Key         |
+
+---
+
+## 🧠 Software & SMS Integration
+
+- Programmed using **Arduino IDE**
+- Uses `WiFiS3.h` and `Arduino_LED_Matrix.h` libraries
+- Replace the placeholders in code:
+  - `ssid`, `password` – your Wi-Fi credentials
+  - `phoneNo`, `apiKey` – from Circuit Digest account
+  - `templateID`, `var1`, `var2` – customize your SMS template
+
+---
+
+## 🔌 Wiring Diagram
+
+| Component      | Arduino Pin |
+|----------------|-------------|
+| MQ-2 Sensor    | A0          |
+| Flame Sensor   | D6          |
+| Green LED      | D3          |
+| Red LED        | D5          |
+| Buzzer         | D4          |
+
+---
+
+## ▶️ Usage
+
+1. 🔌 Connect the components on a breadboard as per the diagram.
+2. 📝 Open the `.ino` file in Arduino IDE and upload it to your board.
+3. 🌐 Ensure the device connects to Wi-Fi.
+4. 🚨 When fire/smoke is detected:
+   - Red LED turns on
+   - Buzzer sounds
+   - SMS is sent to your phone via API
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
