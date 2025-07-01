@@ -1,4 +1,12 @@
-__pycache__/
-*.pyc
-*.log
-.env
+# Arduino build files
+*.hex
+*.elf
+*.bin
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE folders
+.vscode/
+.idea/
