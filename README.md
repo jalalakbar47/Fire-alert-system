@@ -1,3 +1,6 @@
+![Made with Arduino](https://img.shields.io/badge/Made%20with-Arduino-blue)
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+
 # 🔥 Fire & Smoke Alarm System with SMS Notification (Wi-Fi | Arduino UNO R4)
 
 A smart DIY system to detect fire and smoke using gas/flame sensors, trigger an alarm, and send instant SMS alerts to your phone using Wi-Fi and a cloud API — **no GSM module required**.
