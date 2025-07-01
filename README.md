@@ -1,97 +1,121 @@
-# Fire Alert System 🔥
 
-An Arduino/Raspberry Pi-based Fire Alert System using Python that detects potential fire hazards via sensors (e.g., smoke or temperature). This project is ideal for home automation, office safety, or industrial applications.
+Fire & Smoke Alarm System with SMS Notification (Arduino UNO R4)
 
-## 🚀 Overview
+A DIY project to detect fire and smoke, trigger an alarm, and instantly send SMS alerts via Wi‑Fi & cloud API (no GSM module required).
 
-This system is designed to:
-- Monitor environmental conditions using sensors
-- Detect possible fire threats in real-time
-- Trigger alerts (buzzer, LED, or any external alarm system)
-- Provide a modular and simple codebase for easy expansion
+📋 Table of Contents
 
-## 🧠 Features
-
-- 🔍 Monitors fire, smoke, or heat using sensor data
-- 🚨 Can trigger real-time alerts (via GPIO)
-- 🧱 Simple, modular Python code for beginners
-- 🔌 Easily integrable with IoT or home automation systems
-- 🧩 Ready for upgrades (email/SMS alerts, cloud dashboard, etc.)
-
-## 📁 File Structure
-
-Fire-alert-system/
-├── fire_alert_system.py   # Main script for fire detection logic
-├── requirements.txt       # Python dependencies
-├── LICENSE                # MIT License
-├── README.md              # Project overview
-└── .gitignore             # (Optional) Ignored files and folders
-
-🛠️ Requirements
-
-Make sure you have Python installed. You’ll also need:
-
-GPIO Libraries
-Required if using Raspberry Pi (e.g., RPi.GPIO)
-
-Sensor Modules
-Example: MQ-2 gas/smoke sensor, DHT11 temperature sensor, etc
-
----
-
-🧪 Installation & Usage
-
-Clone the repository and run the code:
-
-git clone https://github.com/jalalakbar47/Fire-alert-system.git
-cd Fire-alert-system
-pip install -r requirements.txt
-python fire_alert_system.py
-
-Make sure your sensors are connected properly to the GPIO pins according to your circuit setup.
-
----
-🎥 Demo (Optional)
-
-> Include a screenshot, photo, or short video here showing your system in action.
-
-
-
-You can use ScreenToGif or phone camera if you’re testing on real hardware.
-
----
-
-📌 Future Improvements
-
-Add email or SMS alerts via Twilio
-
-Web dashboard integration
-
-Fire location mapping (for multi-sensor setup)
-
-Battery backup monitoring
-
----
-
-🤝 Contributing
-
-
-Pull requests are welcome. If you want to suggest improvements, feel free to open an issue first.
-
-📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. Overview
+2. How It Works
+3. Components Required
+4. Wiring Diagram
+5. Software & SMS Integration
+6. Arduino Code
+7. Usage
+8. License
 
 
 ---
 
-🙌 Acknowledgments
+Overview
 
-Inspired by real-world smart fire alarm systems
-
-Built with ❤️ by Jalaluddin Khan
+This project enables quick detection of fire or smoke using two sensors connected to an Arduino UNO R4 Wi‑Fi board. It triggers a buzzer and LEDs locally and sends real-time SMS alerts to a designated number using a cloud SMS API—no GSM hardware needed. It's an affordable and effective safety upgrade for homes or offices .
 
 
 ---
 
+How It Works
+
+1. Wi‑Fi Connection: Arduino connects to a local Wi‑Fi network using stored credentials.
+2. Detection:
+ . MQ‑2 sensor measures smoke or combustible gas levels.
+ . Flame sensor detects infrared light from fire.
+3. Alert Trigger:
+ .If smoke or flame exceeds the threshold, Arduino activates a buzzer and red LED, turns off green LED.
+ .It sends an HTTP request to the SMS API with your phone number and alert message.
+4. SMS Delivery: The cloud SMS API processes and sends the alert to your mobile network — fast, reliable, and free .
+---
+
+Components Required
+
+1.Arduino UNO R4 Wi‑Fi
+2. MQ‑2 Smoke Sensor (gas/smoke detection)
+3. Flame Sensor (infrared fire detection)
+4. 5 V Active Buzzer
+5. Red & Green LEDs + 220 Ω resistors
+6. Breadboard & jumper wires
+7. USB or 5 V DC power supply
+8. Wi‑Fi network & Circuit Digest SMS API Key 
+
+---
+
+Wiring Diagram
+
+Component	Connected to
+
+1. MQ‑2 analog out	A0 of Arduino
+2. Flame digital out	D6
+3. Buzzer	D4
+4. Green LED	D3 (via 220 Ω)
+5. Red LED	D5 (via 220 Ω)
+6. Arduino is powered via USB or DC jack. Breadboard supports component arrangement .
+
+---
+
+Software & SMS Integration
+
+1. Libraries:
+ .WiFiS3.h for Wi‑Fi networking
+ .Arduino_LED_Matrix.h for onboard LED animations (optional for enhanced UX) 
+
+2. SMS API:
+ .Use Circuit Digest Cloud SMS API.
+ .Select SMS template (e.g., Device Status Alert ID = 101).
+ .Assign template variables (var1, var2) in your code—for instance, var1 = “House”, var2 = “FIRE EMERGENCY!” .
+
+
+
+3. HTTP Request:
+  Arduino sends alert as JSON via POST (or GET) with API key, recipient number, and message variables.
+
+---
+
+Arduino Code
+
+Outline of main routines ⬇️:
+
+
+
+---
+
+Usage
+
+1. Upload the code to your Arduino via the Arduino IDE.
+
+
+2. Power the system from USB or wall adapter.
+
+
+3. Green LED indicates normal operation.
+
+
+4. Smoke or flame triggers red LED, buzzer, and SMS to your phone.
+
+
+5. Monitor sensor values via Serial or optional LED matrix display.
+
+
+6. Customize:
+
+Adjust SMOKE_THRESHOLD based on your environment.
+
+Change message content via var1 and var2.
+
+Swap SMS template if preferred.
+
+---
+
+License
+
+This project is shared for educational and hobbyist use. Please attribute Circuit Digest when using or adapting.
 
