@@ -1,5 +1,10 @@
-![Made with Arduino](https://img.shields.io/badge/Made%20with-Arduino-blue)
-![MIT License](https://img.shields.io/badge/license-MIT-green)
+[![Top language: C++](https://img.shields.io/github/languages/top/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system)
+[![License: MIT](https://img.shields.io/github/license/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system/forks)
+[![Open issues](https://img.shields.io/github/issues/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system/issues)
+[![Last commit](https://img.shields.io/github/last-commit/jalalakbar47/Fire-alert-system?style=flat-square)](https://github.com/jalalakbar47/Fire-alert-system/commits/main)
+[![Workflow status](https://img.shields.io/github/actions/workflow/status/jalalakbar47/Fire-alert-system/copilot-swe-agent%2Fcopilot?style=flat-square&label=workflow)](https://github.com/jalalakbar47/Fire-alert-system/actions/workflows/copilot-swe-agent/copilot)
 
 # 🔥 Fire & Smoke Alarm System with SMS Notification (Wi-Fi | Arduino UNO R4)
 
